@@ -17,7 +17,10 @@
    Written by Danny Bickson, CMU
 */
 #include <stdio.h>
+#include <unistd.h>
 #include "common.h"
+
+
 void usage(char * argv[]){
        fprintf(stderr, "Usage: %s\n\t-m matrix A in sparse matrix market format\n"
                        "\t -v vector y in sparse matrix market format\n"

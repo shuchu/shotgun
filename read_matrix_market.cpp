@@ -84,8 +84,11 @@ void convert_2_mat(const char * filename, shotgun_data * prob )
         fscanf(f, "%d %d %lg\n", &I, &J, &val);
         I--;  /* adjust from 1-based to 0-based */
         J--;
-        prob->A_cols[J].add(I, val);
-        prob->A_rows[I].add(J, val);
+        //prob->A_cols[J].add(I, val);
+        //prob->A_rows[I].add(J, val);
+        
+        prob->A_cols->at(J).add(I, val);
+        prob->A_rows->at(I).add(J, val);
     }
 
     prob->nx = N;
